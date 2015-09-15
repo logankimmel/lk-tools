@@ -13,9 +13,9 @@ when "add"
     cmd = "sudo route -n add #{b} #{gateway}"
     %x[ #{cmd} ]
   end
-when "remove"
+when "delete"
   blocks.each do |b|
-    cmd = "sudo route -n remove #{b}"
+    cmd = "sudo route -n delete #{b}"
     %x[ #{cmd} ]
   end
 else
