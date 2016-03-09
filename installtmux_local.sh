@@ -39,19 +39,6 @@ cd ~/
 export PATH=$PATH:/usr/local/bin
 
 rm -rf tmux-1.8 libevent-2.0.21-stable tmux-1.8.tar.gz libevent-2.0.21-stable.tar.gz
-echo "set-option -g status-utf8 on
-set-option -g status-justify right
-set-option -g status-bg black # colour213 # pink
-set-option -g status-fg cyan
-set-option -g status-interval 5
-set-option -g status-left-length 30
-set-option -g status-left '#[fg=magenta]» #[fg=cyan,bold]#T#[default]'
-set-option -g status-right '#[fg=red,bold][[ #(git branch) branch ]] #[fg=cyan]»» #[fg=blue,bold]###S #[fg=magenta]%R %m-%d#(acpi | cut -d ',' -f 2)#[default]'
-set-option -g visual-activity on
-
-# Titles (window number, program name, active (or not)
-set-option -g set-titles on
-set-option -g set-titles-string '#H:#S.#I.#P #W #T'" > ~/.tmux.conf
 
 #History in tmux
 echo "export HISTCONTROL=ignoredups:erasedups
@@ -59,6 +46,9 @@ shopt -s histappend
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r\n" >> /root/.bashrc
 
 ENDSSH
+
+scp .tmux.conf root@$IP:
+
 echo ""
 echo "------------------"
 echo "Installed tmux 1.8"
