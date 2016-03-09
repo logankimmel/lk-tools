@@ -53,6 +53,11 @@ set-option -g visual-activity on
 set-option -g set-titles on
 set-option -g set-titles-string '#H:#S.#I.#P #W #T'" > ~/.tmux.conf
 
+#History in tmux
+echo "export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r\n" >> /root/.bashrc
+
 ENDSSH
 echo ""
 echo "------------------"
