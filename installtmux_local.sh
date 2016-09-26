@@ -47,7 +47,7 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 
 ENDSSH
 
-scp .tmux.conf root@$IP:
+scp tmux.conf root@$IP:.tmux.conf
 
 echo ""
 echo "------------------"
